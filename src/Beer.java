@@ -1,9 +1,14 @@
 public class Beer extends ColdBeverage {
-    public static void main(String[] args) {
-        Beer Beer = new Beer();
-        Beer.shortName = "CB";
-        Beer.price = 3;
-        System.out.println(Beer.toString() + " " + Beer.getPrice());
+
+    private Beer() {
+        shortName = "CB";
+        price = 3;
     }
 
+    private static Beer _Beer;
+
+    public static Beer accessBeer() {
+        _Beer = new Beer();
+        return _Beer;
+    }
 }

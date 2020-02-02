@@ -1,8 +1,13 @@
 public class Tea extends HotBeverage {
+    private Tea() {
+        shortName = "HT";
+        price = 2;
+    }
 
-    public void main(String[] args) {
-        Tea Tea = new Tea();
-        Tea.shortName = "HT";
-        Tea.price = 2;
+    private static Tea _Tea;
+
+    public static Tea accessTea() {
+        _Tea = new Tea();
+        return _Tea;
     }
 }

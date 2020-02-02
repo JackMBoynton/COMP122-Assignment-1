@@ -1,8 +1,13 @@
 public class Coffee extends HotBeverage {
-    public static void main(String[] args) {
-        Coffee Coffee = new Coffee();
-        Coffee.shortName = "HC";
-        Coffee.price = 2;
-        System.out.println(Coffee.toString() + " " + Coffee.getPrice());
+    private Coffee() {
+        shortName = "HC";
+        price = 2;
+    }
+
+    private static Coffee _Coffee;
+
+    public static Coffee accessCoffee() {
+        _Coffee = new Coffee();
+        return _Coffee;
     }
 }
